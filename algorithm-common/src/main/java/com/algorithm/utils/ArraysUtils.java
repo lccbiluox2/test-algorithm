@@ -17,4 +17,10 @@ public class ArraysUtils {
     public static void printIntArray(int[] array) {
         System.out.println(Arrays.toString(array));
     }
+
+    public static void swap(int[] arr, int i, int minPos) {
+        int temp = arr[i];
+        arr[i] = arr[minPos];
+        arr[minPos] = temp;
+    }
 }
