@@ -13,4 +13,8 @@ public class ArraysUtils {
     public static void printIntArray(Integer[] array) {
         System.out.println(Arrays.toString(array));
     }
+
+    public static void printIntArray(int[] array) {
+        System.out.println(Arrays.toString(array));
+    }
 }

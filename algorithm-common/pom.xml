@@ -7,6 +7,11 @@
     <groupId>com.algorithm.common</groupId>
     <artifactId>algorithm-common</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <nacos.version>2.0.3</nacos.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -14,6 +19,7 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 
