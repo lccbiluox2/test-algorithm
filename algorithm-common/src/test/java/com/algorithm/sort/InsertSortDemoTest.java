@@ -22,4 +22,14 @@ public class InsertSortDemoTest {
         Integer[] aa = new Integer[]{1,2,3,5,8,3,6,2};
         InsertSortDemo.insertSort(aa);
     }
+
+
+    /**
+     * 测试点：测试插入排序  [1, 2, 2, 3, 3, 5, 6, 8]
+     */
+    @Test
+    public void insertSort2() {
+        int[] aa = new int[]{9,6,1,3,5};
+        InsertSortDemo.shellSort2(aa);
+    }
 }

@@ -2,6 +2,8 @@ package com.algorithm.sort;
 
 import com.algorithm.utils.ArraysUtils;
 
+import java.util.Arrays;
+
 /**
  * @author: chuanchuan.lcc
  * @date: 2021-09-12 15:57
@@ -28,6 +30,15 @@ public class InsertSortDemo {
         arr[i] = arr[i] ^ arr[j];
         arr[j] = arr[i] ^ arr[j];
         arr[i] = arr[i] ^ arr[j];
+    }
+
+
+    /**
+     * 插入排序的改进空间 去掉swap方法
+     * @param arr
+     */
+    public static void shellSort2(int[] arr){
+        // todo: 未实现
     }
 }
 
