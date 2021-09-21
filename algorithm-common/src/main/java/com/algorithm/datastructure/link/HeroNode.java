@@ -11,9 +11,9 @@ import lombok.Data;
  */
 @Data
 public class HeroNode {
-    private int no;
-    private String name;
-    private String nickname;
+    public int no;
+    public String name;
+    public String nickname;
     public HeroNode preNode;
     public HeroNode nextNode;
 
