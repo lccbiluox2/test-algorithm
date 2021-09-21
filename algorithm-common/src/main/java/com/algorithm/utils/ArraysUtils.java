@@ -23,4 +23,17 @@ public class ArraysUtils {
         arr[i] = arr[minPos];
         arr[minPos] = temp;
     }
+
+    /**
+     * 打印二维数组
+     * @param chessArra
+     */
+    public static void printIntTowArray(int[][] chessArra) {
+        for (int[] ints : chessArra) {
+            for (int anInt : ints) {
+                System.out.printf("%d\t",anInt);
+            }
+            System.out.println();
+        }
+    }
 }
