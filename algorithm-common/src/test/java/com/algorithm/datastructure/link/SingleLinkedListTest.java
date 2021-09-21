@@ -74,4 +74,25 @@ public class SingleLinkedListTest {
 
 
     }
+
+    @Test
+    public void delete() {
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        HeroNode heroNode1 = new HeroNode(1, "张三", "占山2");
+        HeroNode heroNode2 = new HeroNode(2, "张三1", "占山3");
+        HeroNode heroNode3 = new HeroNode(3, "张三2", "占山5");
+
+        singleLinkedList.addByOrder(heroNode3);
+        singleLinkedList.addByOrder(heroNode1);
+        singleLinkedList.addByOrder(heroNode2);
+
+        singleLinkedList.list();
+
+        singleLinkedList.delete(2);
+
+        singleLinkedList.list();
+
+
+    }
 }

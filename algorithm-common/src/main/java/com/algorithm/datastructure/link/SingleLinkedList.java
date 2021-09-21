@@ -92,6 +92,36 @@ public class SingleLinkedList {
     }
 
 
+    public void delete(int  no){
+        if(head.nextNode == null){
+            System.out.println("链表为空");
+            return;
+        }
+        HeroNode temp = head.nextNode;
+        // 表示是否找到这个节点
+        boolean flag = false;
+        // 遍历链表找到最后
+        while (true) {
+            // 找到链表的最后，已经遍历完列表
+            if (temp  == null) {
+                break;
+            }
+            if (temp.nextNode.no == no) {
+                // 找到位置
+                flag = true;
+                break;
+            }
+            // 如果没找到，将temp后移
+            temp = temp.nextNode;
+        }
+        if (flag) {
+            System.out.println("数据已经存在当前序号的" + temp.no);
+            temp.nextNode = temp.nextNode.nextNode;
+        }else {
+            System.out.println("没有找到数据");
+        }
+    }
+
     public void list() {
         if (head.nextNode == null) {
             System.out.println("链表为空");
