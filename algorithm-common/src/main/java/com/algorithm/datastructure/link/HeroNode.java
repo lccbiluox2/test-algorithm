@@ -10,12 +10,15 @@ import lombok.Data;
  * @description:
  */
 @Data
-public class HeroNode {
+public class HeroNode implements Cloneable {
     public int no;
     public String name;
     public String nickname;
     public HeroNode preNode;
     public HeroNode nextNode;
+
+    public HeroNode() {
+    }
 
     public HeroNode(int no, String name, String nickname) {
         this.no = no;
@@ -30,5 +33,14 @@ public class HeroNode {
                 ", name='" + name + '\'' +
                 ", nickname='" + nickname + '\'' +
                 '}';
+    }
+
+    @Override
+    protected HeroNode clone() {
+        HeroNode heroNode = new HeroNode();
+        heroNode.setNo(this.getNo());
+        heroNode.setName(this.getName());
+        heroNode.setNickname(this.getNickname());
+        return heroNode;
     }
 }

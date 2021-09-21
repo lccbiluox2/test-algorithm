@@ -95,4 +95,47 @@ public class SingleLinkedListTest {
 
 
     }
+
+    @Test
+    public void reverse() {
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        HeroNode heroNode1 = new HeroNode(1, "张三", "占山2");
+        HeroNode heroNode2 = new HeroNode(2, "李四", "占山3");
+        HeroNode heroNode3 = new HeroNode(3, "王五", "占山5");
+        HeroNode heroNode4 = new HeroNode(4, "赵柳", "占山5");
+
+        singleLinkedList.addByOrder(heroNode3);
+        singleLinkedList.addByOrder(heroNode1);
+        singleLinkedList.addByOrder(heroNode2);
+        singleLinkedList.addByOrder(heroNode4);
+
+        singleLinkedList.list();
+        singleLinkedList.reverse();
+
+        singleLinkedList.list();
+    }
+
+
+    @Test
+    public void reverseList() {
+        SingleLinkedList singleLinkedList = new SingleLinkedList();
+
+        HeroNode heroNode1 = new HeroNode(1, "张三", "占山2");
+        HeroNode heroNode2 = new HeroNode(2, "李四", "占山3");
+        HeroNode heroNode3 = new HeroNode(3, "王五", "占山5");
+        HeroNode heroNode4 = new HeroNode(4, "赵柳", "占山5");
+
+        singleLinkedList.addByOrder(heroNode3);
+        singleLinkedList.addByOrder(heroNode1);
+        singleLinkedList.addByOrder(heroNode2);
+        singleLinkedList.addByOrder(heroNode4);
+
+        singleLinkedList.list();
+        singleLinkedList.reverseList();
+
+        singleLinkedList.list();
+    }
+
+
 }
