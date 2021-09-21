@@ -66,14 +66,27 @@ public class ArrayToQueue {
             return true;
         }
 
+        if (0 < free && writeIndex == maxSize) {
+            arr[0] = data;
+            writeIndex = 0;
+            free--;
+            return true;
+        }
+
         return false;
     }
 
 
     public Integer readQueue() {
-        if (free < maxSize) {
+        if (free < maxSize - 1) {
             int value = arr[readIndex];
             readIndex = readIndex + 1;
+            free++;
+            return value;
+        }
+        if(free <= maxSize - 1 && readIndex == maxSize ){
+            int value = arr[0];
+            readIndex = 0;
             free++;
             return value;
         }

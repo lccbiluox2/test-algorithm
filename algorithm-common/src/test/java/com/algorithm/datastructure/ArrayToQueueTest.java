@@ -80,4 +80,70 @@ public class ArrayToQueueTest {
         arrayToQueue.printDetail();
         System.out.println(integer);
     }
+
+    @Test
+    public void addQueue5() {
+        ArrayToQueue arrayToQueue = new ArrayToQueue(4);
+        arrayToQueue.addQueue(2);
+        arrayToQueue.addQueue(5);
+        arrayToQueue.addQueue(8);
+        arrayToQueue.addQueue(9);
+        arrayToQueue.addQueue(10);
+        arrayToQueue.printDetail();
+
+        Integer integer = arrayToQueue.readQueue();
+        arrayToQueue.printDetail();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        arrayToQueue.printDetail();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        arrayToQueue.printDetail();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        arrayToQueue.printDetail();
+        System.out.println(integer);
+    }
+
+    @Test
+    public void addQueue6() {
+        ArrayToQueue arrayToQueue = new ArrayToQueue(4);
+        arrayToQueue.addQueue(2);
+        arrayToQueue.addQueue(5);
+        arrayToQueue.addQueue(8);
+        arrayToQueue.addQueue(9);
+        arrayToQueue.printDetail();
+
+        Integer integer = arrayToQueue.readQueue();
+        arrayToQueue.printDetail();
+        System.out.println(integer);
+
+        arrayToQueue.addQueue(10);
+        arrayToQueue.printDetail();
+
+        arrayToQueue.addQueue(15);
+        arrayToQueue.printDetail();
+
+        integer = arrayToQueue.readQueue();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        System.out.println(integer);
+
+        integer = arrayToQueue.readQueue();
+        System.out.println(integer);
+
+        arrayToQueue.printDetail();
+    }
+
+
 }
