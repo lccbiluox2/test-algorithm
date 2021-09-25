@@ -18,6 +18,12 @@ public class StackToExpression {
 
     }
 
+    /**
+     * 不支持多位数
+     *
+     * @param expression
+     * @return
+     */
     public int parseAndCalExpression(String expression) {
         int index = 0;
         char ch = 0;
@@ -88,6 +94,78 @@ public class StackToExpression {
                 System.out.println("数字1");
                 numStack.print();
                 operaStack.print();
+            }
+
+            index++;
+            if (index >= expression.length()) {
+                break;
+            }
+        }
+
+        while (true) {
+            if (operaStack.isEmpty()) {
+                break;
+            } else {
+                int num1 = numStack.pop();
+                int num2 = numStack.pop();
+                int opera = operaStack.pop();
+                res = numStack.cal(num1, num2, opera);
+
+                numStack.push(res);
+            }
+        }
+
+        int last = numStack.pop();
+        System.out.println("表达式结果：" + last);
+        return last;
+    }
+
+
+    /**
+     * 支持多位数
+     *
+     * @param expression
+     * @return
+     */
+    public int parseAndCalExpression1(String expression) {
+        int index = 0;
+        char ch = 0;
+        int res = 0;
+        String keepNum = "";
+        while (true) {
+            ch = expression.substring(index, index + 1).charAt(0);
+            if (operaStack.isOperator(ch)) {
+                if (!operaStack.isEmpty()) {
+                    if (operaStack.priority(ch) <= operaStack.priority(operaStack.peak())) {
+                        int num1 = numStack.pop();
+                        int num2 = numStack.pop();
+                        int opera = operaStack.pop();
+                        res = numStack.cal(num1, num2, opera);
+
+                        numStack.push(res);
+                        operaStack.push(ch);
+
+                    } else {
+                        operaStack.push(ch);
+                    }
+                } else {
+                    // 减去48是 ASIIC 码
+                    operaStack.push(ch);
+                }
+            }
+
+            if (!operaStack.isOperator(ch)) {
+
+                keepNum = keepNum + ch;
+                if (index == expression.length() - 1) {
+                    numStack.push(Integer.parseInt(keepNum));
+                } else {
+                    if (operaStack.isOperator(expression.substring(index + 1, index + 2).charAt(0))) {
+                        numStack.push(Integer.parseInt(keepNum));
+                        keepNum = "";
+                    }
+                }
+
             }
 
             index++;

@@ -21,4 +21,10 @@ public class StackToExpressionTest {
         StackToExpression stackToExpression = new StackToExpression();
         stackToExpression.parseAndCalExpression("1+4*2+5");
     }
+
+    @Test
+    public void parseAndCalExpression1() {
+        StackToExpression stackToExpression = new StackToExpression();
+        stackToExpression.parseAndCalExpression1("1+40*2+50");
+    }
 }
