@@ -26,4 +26,12 @@ public class CountSortTest {
         int[] count = CountSort.cumulative(aa);
         System.out.println(count);
     }
+
+
+    @Test
+    public void countSortTest() {
+        int[] aa = new int[]{1, 2, 3, 5,5,6,8,9,9,5, 8, 3, 6,9};
+        int[] count = CountSort.countSort(aa);
+        System.out.println(count);
+    }
 }
