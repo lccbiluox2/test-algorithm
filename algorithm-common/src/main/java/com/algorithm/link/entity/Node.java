@@ -9,8 +9,8 @@ package com.algorithm.link.entity;
  */
 public class Node {
 
-    private Object data;//数据域
-    private Node next;//指针域
+    public Object data;//数据域
+    public Node next;//指针域
 
     public Node(Object data){
         this.data = data;
