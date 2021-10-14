@@ -58,4 +58,13 @@ public class RemoveDigSmallTest {
         System.out.println(RemoveDigSmall.removeKDigits("10",2));
         System.out.println(RemoveDigSmall.removeKDigits("541270936",3));
     }
+
+
+    @Test
+    public void removeKDigits1Test() throws Exception {
+        System.out.println(RemoveDigSmall.removeKDigits1("1593212",3));
+        System.out.println(RemoveDigSmall.removeKDigits1("30200",1));
+        System.out.println(RemoveDigSmall.removeKDigits1("10",2));
+        System.out.println(RemoveDigSmall.removeKDigits1("541270936",3));
+    }
 }
