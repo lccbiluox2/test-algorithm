@@ -14,21 +14,26 @@ import static org.junit.Assert.*;
 public class BigSumTest {
 
 
-
+    /**
+     * -5631521226866015569
+     */
     @Test
     public void main() {
-        long a = 426709752318l;
-        long b = 95481253129l;
+        long a = 4267097523399999918l;
+        long b = 8548125323443536129l;
 
         System.out.println(a + b);
     }
 
     /**
      * 522180905447
+     *
+     * -5631521226866015569
+     * 12715222846843535047
      */
     @Test
     public void bigNumberSum() {
-        System.out.println(BigSum.bigSum("426709752318", "95481253129"));
+        System.out.println(BigSum.bigSum("4267097523399999918", "8548125323443536129"));
 
     }
 

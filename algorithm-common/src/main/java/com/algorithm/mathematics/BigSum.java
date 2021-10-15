@@ -30,16 +30,20 @@ public class BigSum {
         if (!StringUtils.isBlank(num1) && StringUtils.isBlank(num2)) {
             return num1;
         }
+        // 字符串 拆分成数组
         String[] num1Array = numToArray(num1);
         String[] num2Array = numToArray(num2);
 
+        // 字符串数组反转
         String[] num1Reverse = arrayReverse(num1Array);
         String[] num2Reverse = arrayReverse(num2Array);
 
+        // 数据相加
         Integer[] numAdd = arrayReverseAdd(num1Reverse, num2Reverse);
 
         System.out.println(Arrays.toString(numAdd));
 
+        // 转成字符串
         String numReverse = arrayReverseInt(numAdd);
         System.out.println(numReverse);
         return numReverse;
