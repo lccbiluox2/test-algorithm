@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class InsertSortDemo {
 
-    public static void insertSort(Integer[] arr) {
+    public static void insertSort(int[] arr) {
         if(arr == null || arr.length < 2){
             return;
         }
@@ -26,19 +26,29 @@ public class InsertSortDemo {
         ArraysUtils.printIntArray(arr);
     }
 
-    public static void swap(Integer[] arr ,int i ,int j) {
+    public static void swap(int[] arr ,int i ,int j) {
         arr[i] = arr[i] ^ arr[j];
         arr[j] = arr[i] ^ arr[j];
         arr[i] = arr[i] ^ arr[j];
     }
 
 
-    /**
-     * 插入排序的改进空间 去掉swap方法
-     * @param arr
-     */
-    public static void shellSort2(int[] arr){
-        // todo: 未实现
+    public static void insertSort2(int[] arr) {
+        if(arr == null || arr.length < 2){
+            return;
+        }
+        for (int i=1;i< arr.length;i++){
+            Integer intertData = arr[i];
+            for (int j = 0; j < i; j++) {
+                int preData  = arr[j];
+                if( intertData  <= preData ){
+                    swap(arr,i,j);
+                    System.out.println(Arrays.toString(arr));
+                }
+            }
+        }
+
+        ArraysUtils.printIntArray(arr);
     }
 }
 
