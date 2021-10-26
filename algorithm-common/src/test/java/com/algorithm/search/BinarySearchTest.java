@@ -39,4 +39,42 @@ public class BinarySearchTest {
         List<Integer> aa = BinarySearch.binarySearch1(arr, 0, arr.length - 1, 53);
         System.out.println(aa);
     }
+
+    /**
+     * 测试点：测试二分查找 查找可能浪费性能
+     *
+     * 查找次数
+     * 查找次数
+     * 查找次数
+     * 查找次数
+     * [0]
+     */
+    @Test
+    public void binarySearch2() {
+        int[] arr = {1,2,3,4,6,7,7,9,10,11,12,13,13,15,15,17,17,19};
+        List<Integer> aa = BinarySearch.binarySearch1(arr, 0, arr.length - 1, 1);
+        System.out.println(aa);
+    }
+
+
+    /**
+     * 测试点：测试查找  测试查找一个不是边界值 也不是中间值需要多少
+     *
+     * 查找次数
+     * 查找次数
+     * 查找次数
+     * 查找次数
+     * [4]
+     *
+     * 可以看到用了4次
+     *
+     * todo:【算法】插值查找算法
+     * https://blog.csdn.net/qq_21383435/article/details/120981935
+     */
+    @Test
+    public void binarySearch3() {
+        int[] arr = {1,2,3,4,6,7,7,9,10,11,12,13,13,15,15,17,17,19};
+        List<Integer> aa = BinarySearch.binarySearch1(arr, 0, arr.length - 1, 6);
+        System.out.println(aa);
+    }
 }

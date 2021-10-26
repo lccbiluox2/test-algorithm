@@ -42,6 +42,7 @@ public class BinarySearch {
      * 4.将Arraylist返回
      */
     public static List<Integer> binarySearch1(int[] arr, int left, int right, int findValue) {
+        System.out.println("查找次数");
         if (left > right) {
             return new ArrayList<>();
         }
