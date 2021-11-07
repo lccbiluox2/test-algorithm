@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @version: 1.0
  * @description:
  *
- * todo; 赫夫曼编码解码
+ * TODO; 赫夫曼编码解码
  *    参考：https://blog.csdn.net/qq_21383435/article/details/121067429
  */
 public class HoffmanCodeTest {

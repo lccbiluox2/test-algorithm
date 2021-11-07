@@ -105,6 +105,18 @@ public class HoffmanCode {
         return zip;
     }
 
+    public static byte[] huffmanZipBytes(byte[] contentBytes) {
+        List<Node> nodes = getNodes(contentBytes);
+
+        Node huffmanTree = createHuffmanTree(nodes);
+        // 下面要拿到赫夫曼编码  根节点没有code
+        huffmanCodes = getCodes(huffmanTree);
+        String codes = getCodeString(contentBytes, huffmanCodes);
+        byte[] zip = zip(codes);
+        return zip;
+    }
+
+
     /**
      * 赫夫曼解码
      ** @return
