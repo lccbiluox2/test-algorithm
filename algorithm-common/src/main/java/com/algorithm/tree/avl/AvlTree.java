@@ -1,66 +1,21 @@
-package com.algorithm.tree.binarysorttree;
-
-import com.algorithm.tree.BinaryTreeDemo;
+package com.algorithm.tree.avl;
 
 /**
  * @author: chuanchuan.lcc
- * @date: 2021-11-07 12:43
+ * @date: 2021-11-07 19:56
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
  */
-public class BinarySortTreeDemo {
-
-    public void makeTree() {
-        int[] arr = {7, 3, 10, 12, 5, 1, 9};
-        BinarySortTree binarySortTree = new BinarySortTree();
-        //循环的添加结点到二叉排序树
-        for (int i = 0; i < arr.length; i++) {
-            binarySortTree.add(new BinarySortTreeNode(arr[i]));
-        }
-        //中序遍历二叉排序树
-        System.out.println("中序遍历二叉排序树~间");
-        binarySortTree.infixOrder();
-    }
-
-    public void deleteLeavesNode() {
-        int[] arr = {7, 3, 10, 12, 5, 1, 9};
-        BinarySortTree binarySortTree = new BinarySortTree();
-        //循环的添加结点到二叉排序树
-        for (int i = 0; i < arr.length; i++) {
-            binarySortTree.add(new BinarySortTreeNode(arr[i]));
-        }
-        //中序遍历二叉排序树
-        System.out.println("中序遍历二叉排序树~间");
-        binarySortTree.infixOrder();
-        binarySortTree.deleteNode(1);
-
-        System.out.println("中序遍历二叉排序树~间");
-        binarySortTree.infixOrder();
-    }
-
-    public void deleteHaveSonNode() {
-        int[] arr = {7, 3, 10, 12, 5, 1, 9};
-        BinarySortTree binarySortTree = new BinarySortTree();
-        //循环的添加结点到二叉排序树
-        for (int i = 0; i < arr.length; i++) {
-            binarySortTree.add(new BinarySortTreeNode(arr[i]));
-        }
-        //中序遍历二叉排序树
-        System.out.println("中序遍历二叉排序树~间");
-        binarySortTree.infixOrder();
-        binarySortTree.deleteNode(9);
-
-        System.out.println("中序遍历二叉排序树~间");
-        binarySortTree.infixOrder();
-    }
-}
-
 //创建二叉排序树
-class BinarySortTree {
-    private BinarySortTreeNode root;
+class AvlTree {
+    private AvlTreeNode root;
 
-    public void add(BinarySortTreeNode node) {
+    public AvlTreeNode getRoot() {
+        return root;
+    }
+
+    public void add(AvlTreeNode node) {
         if (root == null) {
             root = node;//如果root为空则直接让root指向node
         } else {
@@ -77,7 +32,7 @@ class BinarySortTree {
         }
     }
 
-    public BinarySortTreeNode search(int value) {
+    public AvlTreeNode search(int value) {
         if (root == null) {
             return null;
         } else {
@@ -85,7 +40,7 @@ class BinarySortTree {
         }
     }
 
-    public BinarySortTreeNode searchParent(int value) {
+    public AvlTreeNode searchParent(int value) {
         if (root == null) {
             return null;
         } else {
@@ -98,7 +53,7 @@ class BinarySortTree {
             return;
         }
         // 找到要删除的节点
-        BinarySortTreeNode targerNode = search(value);
+        AvlTreeNode targerNode = search(value);
         // 没有找到要删除的节点
         if (targerNode == null) {
             return;
@@ -110,7 +65,7 @@ class BinarySortTree {
             root = null;
             return;
         }
-        BinarySortTreeNode parent = searchParent(value);
+        AvlTreeNode parent = searchParent(value);
         // 如果要删除的节点是叶子节点
         if (targerNode.left == null && targerNode.right == null) {
             // 节点的左右节点都是空的
@@ -173,8 +128,8 @@ class BinarySortTree {
      * @paramnode传入的结点(当做二叉排序树的根结点)
      * @return返回的以node为根结点的二叉排序树的最小结点的值
      */
-    public int delRightTreeMin(BinarySortTreeNode node) {
-        BinarySortTreeNode target = node;
+    public int delRightTreeMin(AvlTreeNode node) {
+        AvlTreeNode target = node;
         //循环的查找左节点，就会找到最小值
         while (target.left != null) {
             target = target.left;
@@ -188,45 +143,14 @@ class BinarySortTree {
 /**
  * 二叉树节点
  */
-class BinarySortTreeNode {
+class AvlTreeNode {
     int value;
-    BinarySortTreeNode left;
-    BinarySortTreeNode right;
+    AvlTreeNode left;
+    AvlTreeNode right;
 
-    BinarySortTreeNode(int data) {
+    AvlTreeNode(int data) {
         this.value = data;
     }
-
-    /**
-     * 返回当前节点的高度，以该节点为根节点的树的高度
-     *
-     * @return
-     */
-    public int height() {
-        return Math.max(left == null ? 0 : left.height(), right == null ? 0 : right.height()) + 1;
-    }
-
-    /**
-     * 获取左子树的高度
-     */
-    public int leftHeight(){
-        if(left == null){
-            return 0;
-        }
-        return left.height();
-    }
-
-    /**
-     * 求出右子树的高度
-     * @return
-     */
-    public int rightHeight(){
-        if(right == null){
-            return 0;
-        }
-        return right.height();
-    }
-
 
     /**
      * 查找要删除的节点
@@ -234,7 +158,7 @@ class BinarySortTreeNode {
      * @param value
      * @return
      */
-    public BinarySortTreeNode search(int value) {
+    public AvlTreeNode search(int value) {
         if (value == this.value) {
             return this;
         } else if (value < this.value) {
@@ -256,7 +180,7 @@ class BinarySortTreeNode {
      * @param value
      * @return
      */
-    public BinarySortTreeNode searchParent(int value) {
+    public AvlTreeNode searchParent(int value) {
         // 当前左边节点不为空，而且左边子子节点的值等于要查找的
         boolean leftFind = this.left != null && this.left.value == value;
         boolean rightFind = this.right != null && this.right.value == value;
@@ -283,7 +207,7 @@ class BinarySortTreeNode {
 
     //添加结点的方法
     //递归的形式添加结点,注意需要满足二叉排序树的要求
-    public void add(BinarySortTreeNode node) {
+    public void add(AvlTreeNode node) {
         if (node == null) {
             return;
         }
@@ -305,6 +229,72 @@ class BinarySortTreeNode {
                 this.right.add(node);
             }
         }
+
+        // 当添加完毕一个节点后,
+        if (isShouldLeftRotate()) {
+            if(isRightSonBigLeftSon()){
+                right.rightRotate();
+                leftRotate();
+            }else {
+                leftRotate();
+            }
+            // TODO; 必须停止不然可能会报错
+            return;
+        }
+
+        // 当添加完毕一个节点后,判断是否需要右边旋转
+        if (isShouldRightRotate()) {
+            if(isLeftSonBigRightSon()){
+                // 对左节点进行左边旋转 todo: 注意点
+                left.leftRotate();
+                rightRotate();
+            }else {
+                rightRotate();
+            }
+        }
+    }
+
+    /**
+     * 如果它的右子树高度大于它的右子树的高度
+     *    A
+     * B     C
+     *     f  g
+     *   h
+     * @return
+     */
+    private boolean isRightSonBigLeftSon() {
+        return right != null && right.leftHeight() > right.rightHeight();
+    }
+
+    /**
+     * 如果它的左子树高度大于它的右子树的高度
+     *
+     *    A
+     *   B     C
+     * d   e
+     *       h
+     * @return
+     */
+    private boolean isLeftSonBigRightSon() {
+       return left != null && left.rightHeight() > left.leftHeight();
+    }
+
+    /**
+     * 右节点树的高度 大于左边 树的高度 比1 大
+     *
+     * @return
+     */
+    private boolean isShouldRightRotate() {
+        return leftHeight() - rightHeight() > 1;
+    }
+
+    /**
+     * 左节点树的高度 大于右边 树的高度 比1 大
+     *
+     * @return
+     */
+    private boolean isShouldLeftRotate() {
+        return rightHeight() - leftHeight() > 1;
     }
 
 
@@ -318,5 +308,75 @@ class BinarySortTreeNode {
             this.right.infixOrder();
         }
     }
+
+    /**
+     * 返回当前节点的高度，以该节点为根节点的树的高度
+     *
+     * @return
+     */
+    public int height() {
+        return Math.max(left == null ? 0 : left.height(), right == null ? 0 : right.height()) + 1;
+    }
+
+    /**
+     * 获取左子树的高度
+     */
+    public int leftHeight() {
+        if (left == null) {
+            return 0;
+        }
+        return left.height();
+    }
+
+    /**
+     * 求出右子树的高度
+     *
+     * @return
+     */
+    public int rightHeight() {
+        if (right == null) {
+            return 0;
+        }
+        return right.height();
+    }
+
+
+    /**
+     * 左旋转整棵树
+     */
+    private void leftRotate() {
+        //创建新的结点，以当前根结点的值
+        AvlTreeNode newNode = new AvlTreeNode(value);
+        //把新的结点的左子树设置成当前结点的左子树
+        newNode.left = left;
+        //把新的结点的右子树设置成带你过去结点的右子树的左子树
+        newNode.right = right.left;
+        //把当前结点的值替换成右子结点的值
+        value = right.value;
+        //把当前结点的右子树设置成当前结点右子树的右子树
+        right = right.right;
+        //把当前结点的左子树(左子结点)设置成新的结点
+        left = newNode;
+    }
+
+
+    /**
+     * 右旋转整棵树
+     */
+    private void rightRotate() {
+        //创建新的结点，以当前根结点的值
+        AvlTreeNode newNode = new AvlTreeNode(value);
+        //把新的结点的右子树设置成当前结点的右子树
+        newNode.right = right;
+        //把新的结点的右子树设置成带你过去结点的左子树的左子树
+        newNode.left = left.right;
+        //把当前结点的值替换成左子结点的值
+        value = left.value;
+        //把当前结点的左子树设置成当前结点左子树的左子树
+        left = left.left;
+        //把当前结点的右子树(右子结点)设置成新的结点
+        right = newNode;
+    }
+
 }
 
