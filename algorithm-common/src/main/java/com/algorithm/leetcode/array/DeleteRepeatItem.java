@@ -1,4 +1,4 @@
-package com.algorithm.leecode.array;
+package com.algorithm.leetcode.array;
 
 import com.algorithm.utils.ArraysUtils;
 

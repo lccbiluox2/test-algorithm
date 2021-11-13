@@ -1,9 +1,6 @@
 package com.algorithm.sum;
 
-import com.algorithm.leecode.array.DeleteRepeatItem;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author: chuanchuan.lcc

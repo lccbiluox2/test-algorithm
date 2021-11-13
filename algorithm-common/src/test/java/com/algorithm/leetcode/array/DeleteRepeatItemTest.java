@@ -1,8 +1,6 @@
-package com.algorithm.leecode.array;
+package com.algorithm.leetcode.array;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author: chuanchuan.lcc
