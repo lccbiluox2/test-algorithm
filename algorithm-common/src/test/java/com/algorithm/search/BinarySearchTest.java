@@ -77,4 +77,18 @@ public class BinarySearchTest {
         List<Integer> aa = BinarySearch.binarySearch1(arr, 0, arr.length - 1, 6);
         System.out.println(aa);
     }
+
+    /**
+     * 二分查找非递归的方式实现
+     *
+     * 这里不能处理多个的情况
+     *
+     * https://blog.csdn.net/qq_21383435/article/details/120975055
+     */
+    @Test
+    public void binarySearchNoRecursive() {
+        int[] arr = {1,2,3,4,6,7,7,9,10,11,12,13,13,15,15,17,17,19};
+        int aa = BinarySearch.binarySearchNoRecursive(arr, 2);
+        System.out.println(aa);
+    }
 }

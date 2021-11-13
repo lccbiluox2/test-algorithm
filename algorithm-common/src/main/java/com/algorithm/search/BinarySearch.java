@@ -83,4 +83,28 @@ public class BinarySearch {
             return resIndexlist;
         }
     }
+
+    /**
+     * 二分查找非递归的方式实现
+     *
+     * @return
+     */
+    public static int binarySearchNoRecursive(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            // 说明需要继续查找
+            int mid = (left + right) / 2;
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] > target) {
+                // 说明需要往左边查找
+                right =  mid - 1;
+            } else {
+                // 说明需要往右边查找
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
 }
