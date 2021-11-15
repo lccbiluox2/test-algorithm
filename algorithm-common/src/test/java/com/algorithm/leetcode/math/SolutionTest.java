@@ -21,6 +21,15 @@ public class SolutionTest {
         System.out.println(fib);
     }
 
+    @Test
+    public void fibSecondTest() {
+        long start = System.currentTimeMillis();
+        int fib = solution.fibSecond(10);
+        System.out.println(fib);
+        long end = System.currentTimeMillis();
+        System.out.println("用时：" +(end - start));
+    }
+
     /**
      * 349361645
      * 用时：3

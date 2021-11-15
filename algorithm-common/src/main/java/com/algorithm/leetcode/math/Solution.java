@@ -12,7 +12,7 @@ import java.util.HashMap;
 public class Solution {
 
     /**
-     * 这个数据量一旦大了就会超时
+     * 斐波那契数列 这个数据量一旦大了就会超时
      *
      * @param n
      * @return
@@ -27,9 +27,30 @@ public class Solution {
         return fib(n - 1) + fib(n - 2);
     }
 
+    /**
+     * 斐波那契的进阶版本
+     *
+     * @param n
+     * @return
+     */
+    public int fibSecond(int n) {
+        if (n < 2) {
+            return n;
+        }
+        int first = fibSecond(n - 1) % constant;
+        System.out.println("first=" + first);
+        int second = fibSecond(n - 2) % constant;
+        System.out.println("second=" + first);
+        int result = (first + second) % constant;
+        System.out.println("result=" + result);
+        return result;
+
+    }
+
     int constant = 1000000007;
 
     /**
+     * 斐波那契数列
      * 下面这个使用Map保留已经计算的，这样会加快速度
      *
      * @param n
@@ -62,7 +83,7 @@ public class Solution {
     }
 
     /**
-     * 使用公式计算
+     * 斐波那契数列 使用公式计算
      * <p>
      * TODO: 这个公式不会写
      *
@@ -75,6 +96,12 @@ public class Solution {
         return 0;
     }
 
+    /**
+     * 斐波那契数列 非递归的方式
+     *
+     * @param n
+     * @return
+     */
     public int fibNoRecursive(int n) {
         int constant = 1000000007;
         int first = 0;
