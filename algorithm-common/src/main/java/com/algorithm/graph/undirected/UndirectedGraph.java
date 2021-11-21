@@ -2,6 +2,7 @@ package com.algorithm.graph.undirected;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 /**
  * @author: chuanchuan.lcc
@@ -138,6 +139,49 @@ public class UndirectedGraph {
         for (int i = 0; i < getNumOfVertex(); i++) {
             if (!isVisited[i]) {
                 dfs(isVisited, i);
+            }
+        }
+    }
+
+
+    //对一个结点进行广度优先遍历的方法
+    private void bfs(boolean[] isVisited, int i) {
+        int u; //表示队列的头结点对应下标
+        int w; //邻接结点w
+        //队列，记录结点访问的顺序
+        LinkedList queue = new LinkedList();
+        //访问结点，输出结点信息
+        System.out.print(getValueByIndex(i) + "=>");
+        //标记为已访问
+        isVisited[i] = true;
+        //将结点加入队列
+        queue.addLast(i);
+        while (!queue.isEmpty()) {
+            //取出队列的头结点下标
+            u = (Integer) queue.removeFirst();
+            w = getFirstNeighbor(u);
+            while (w != -1) {
+                // 是否被访问过
+                if (!isVisited[w]) {
+                    System.out.print(getValueByIndex(w) + "=>");
+                    // 标记已经访问了
+                    isVisited[w] = true;
+                    // 加入队列
+                    queue.addLast(w);
+                }
+                // 如果已经访问过了
+                w = getNextNeighbor(u, w);
+            }
+        }
+    }
+
+    /**
+     * 广度优先遍历
+     */
+    public void bfs() {
+        for (int i = 0; i < getNumOfVertex(); i++) {
+            if(!isVisited[i]){
+                bfs(isVisited,i);
             }
         }
     }
