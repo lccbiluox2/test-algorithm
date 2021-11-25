@@ -1,8 +1,7 @@
 package com.algorithm.leetcode.swordoffer;
 
+import com.algorithm.leetcode.swordoffer.offer11.Offer11;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author: chuanchuan.lcc
