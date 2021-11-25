@@ -1,4 +1,4 @@
-package com.algorithm.leetcode.sword.offer;
+package com.algorithm.leetcode.swordoffer;
 
 /**
  * @author: chuanchuan.lcc

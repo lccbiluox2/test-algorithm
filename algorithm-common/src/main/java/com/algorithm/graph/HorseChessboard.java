@@ -89,7 +89,7 @@ public class HorseChessboard {
         //row = 4 X= 8 column =4=4*8+4=36
         // 这一点因为 visited 是一维数组，所以这里需要转换一下，可以对比棋盘验证，
         // 这个计算方式是对的
-        visited[row * X + column] = true; //标记该位置已经访问
+        visited[row * X + column] = true; //标记该位置已经s访问
         //获取当前位置可以走的下一个位置的集合
         ArrayList<Point> ps = next(new Point(column, row));
         while (!ps.isEmpty()) {
