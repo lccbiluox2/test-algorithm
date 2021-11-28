@@ -1,5 +1,7 @@
 package com.algorithm.leetcode.swordoffer.offer21;
 
+import java.util.Arrays;
+
 /**
  * @author: chuanchuan.lcc
  * @date: 2021-11-28 15:28
@@ -25,13 +27,61 @@ package com.algorithm.leetcode.swordoffer.offer21;
 public class ExchangeNum {
 
     public int[] exchange(int[] nums) {
-        int mid = nums.length / 2;
+        if (nums.length < 1) {
+            return nums;
+        }
         int left = 0;
-        int right = nums.length;
-        while (true){
-            if(left < mid){
+        int right = nums.length - 1;
+        while (left != right) {
+            // 左边数据是奇数
+            int leftValue = nums[left];
+            int rightValue = nums[right];
+            if (leftValue % 2 != 0) {
+                // 左边奇数  右边奇数 左移动
+                if (rightValue % 2 != 0) {
+                    left++;
+                } else if (rightValue % 2 == 0) {
+                    //  左边奇数 右边偶数数 左移动
+                    right--;
+                }
+            } else if (leftValue % 2 == 0) {
+                // 如果左边是偶数 如果右边是奇数 那么需要交换
+                if (rightValue % 2 != 0) {
+                    int temp1 = nums[left];
+                    nums[left] = nums[right];
+                    nums[right] = temp1;
+                } else if (rightValue % 2 == 0) {
+                    // 左边偶数 右边偶数
+                    right--;
+                }
+            }
+            System.out.println(Arrays.toString(nums));
+        }
+        return nums;
+    }
 
+
+
+    public int[] exchange1(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            // 如果左边的是奇数 那么就递增
+            while (left < right && nums[left] % 2 != 0) {
+                left++;
+            }
+            // 如果右边的是奇数 那么右边的递减
+            while (left < right && nums[right] % 2 == 0) {
+                right--;
+            }
+
+            // 左边是偶数 右边是奇数 需要交换
+            if (left < right) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
             }
         }
+        return nums;
     }
 }
