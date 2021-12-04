@@ -2,6 +2,7 @@ package com.algorithm.leetcode.swordoffer.offer58;
 
 import java.util.Stack;
 
+
 /**
  * @author: chuanchuan.lcc
  * @date: 2021-11-29 21:35
@@ -22,17 +23,17 @@ public class ReverseString {
     public String reverseWords(String s) {
         Stack stack = new Stack();
 
-        s = s.replaceAll(" +"," ");
+        s = s.replaceAll(" +", " ");
         s = s.trim();
 
         StringBuilder temp = new StringBuilder();
         for (int i = 0; i <= s.length(); i++) {
             // 证明到结尾了
-            if(i == s.length()){
+            if (i == s.length()) {
                 stack.push(temp.toString());
                 continue;
             }
-            if (s.charAt(i) == ' ' && s.charAt(i+1) != ' ') {
+            if (s.charAt(i) == ' ' && s.charAt(i + 1) != ' ') {
                 stack.push(temp.toString());
                 stack.push(' ');
                 temp = new StringBuilder();
@@ -67,5 +68,40 @@ public class ReverseString {
         }
         //输出String 完事，安排！
         return stringBuffer.toString();
+    }
+
+    public String reverseWords2(String s) {
+        int n = s.length();
+        char[] chars = s.toCharArray();
+        int i = 0, j = 0;
+        while (j <= n) {
+            if (j == n || chars[j] == ' ') {
+                reverse(chars, i, j - 1);
+                i = j + 1;
+            }
+            j++;
+        }
+        reverse(chars, 0, n - 1);
+
+        String s_ret = new String(chars).trim();
+        String[] split = s_ret.split("[\\s]+");
+        StringBuilder builder = new StringBuilder();
+        for (String sc : split) {
+            builder.append(sc).append(" ");
+        }
+        return builder.toString().trim();
+
+    }
+
+    private void reverse(char[] chars, int start, int end) {
+        while (start < end) {
+            swap(chars, start++, end--);
+        }
+    }
+
+    private void swap(char[] chars, int start, int end) {
+        char temp = chars[start];
+        chars[start] = chars[end];
+        chars[end] = temp;
     }
 }

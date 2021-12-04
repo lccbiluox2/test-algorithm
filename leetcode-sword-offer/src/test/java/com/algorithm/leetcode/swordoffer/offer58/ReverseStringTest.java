@@ -28,4 +28,18 @@ public class ReverseStringTest {
 
 
     }
+
+    @Test
+    public void reverseWords2() {
+        String result = reverseString.reverseWords2("the sky is blue");
+        System.out.println(result);
+
+        result = reverseString.reverseWords2("  hello world!  ");
+        System.out.println(result);
+
+        result = reverseString.reverseWords2("a good   example");
+        System.out.println(result);
+
+
+    }
 }
