@@ -2,6 +2,8 @@ package com.algorithm.leetcode.swordoffer.offer17;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 import static org.junit.Assert.*;
 
 /**
@@ -17,6 +19,13 @@ public class PrintNumbersTest {
 
     @Test
     public void printNumbers() {
-        printNumbers.printNumbers(3);
+        int[] ints = printNumbers.printNumbers(0);
+        System.out.println(Arrays.toString(ints));
+    }
+
+    @Test
+    public void printNumbers1() {
+        int[] ints = printNumbers.printNumbers1(8);
+        System.out.println(Arrays.toString(ints));
     }
 }
