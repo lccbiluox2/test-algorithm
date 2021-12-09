@@ -117,4 +117,29 @@ public class ContinuousAnArrayOfSum {
     public Map<String, Integer> getMap() {
         return map;
     }
+
+    /**
+     * 测试点：求最大子数组
+     * @param nums
+     * @return
+     */
+    public int maxSubArray3(int[] nums) {
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        for (int i = 0; i < nums.length; i++) {
+            if(dp[i-1] > 0){
+                dp[i] = dp[i-1] + nums[i];
+            }else {
+                dp[i] = nums[i];
+            }
+        }
+
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < dp.length; i++) {
+            max = Math.max(max,dp[i]);
+        }
+        return max;
+    }
+
+
 }
