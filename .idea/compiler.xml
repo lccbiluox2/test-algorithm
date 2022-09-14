@@ -11,8 +11,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="algorithm-common" target="1.8" />
-      <module name="leetcode-sword-offer" target="1.8" />
+      <module name="algorithm-common" target="8" />
+      <module name="leetcode-sword-offer" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
