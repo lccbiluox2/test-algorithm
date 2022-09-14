@@ -34,6 +34,10 @@ public class RingLastOne {
      *
      * 旧的编号：0 1 ...m-1  m  m+1....n-1   因为索引位置是从0开始的 所以每个数字的索引都是自己值小于1
      * 新的编号：-m -m+1 ...m-1  m  0  1 ... 因为索引位置是从0开始的 所以每个数字的索引都是自己值小于1
+     *
+     * 看这个看懂了一点点
+     * https://www.bilibili.com/video/BV1rk4y1971Y?spm_id_from=333.337.search-card.all.click&vd_source=44c491a7c7c735ef8081cb60288bb47e
+     *
      */
     public int lastRemaining(int n, int m) {
         //  todo: 下午11:05 九师兄 如果只有一个数字 那么直接返回下标0 就可以了
