@@ -36,6 +36,93 @@
             <version>5.7.15</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.lmax/disruptor -->
+
+        <!-- https://mvnrepository.com/artifact/com.lmax.wso2/disruptor -->
+        <!--<dependency>-->
+            <!--<groupId>com.lmax.wso2</groupId>-->
+            <!--<artifactId>disruptor</artifactId>-->
+            <!--<version>3.2.1.wso2v1</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.wso2.lmax/disruptor -->
+        <!--<dependency>-->
+            <!--<groupId>org.wso2.lmax</groupId>-->
+            <!--<artifactId>disruptor</artifactId>-->
+            <!--<version>3.3.2.wso2v1</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.wso2.lmax/disruptor -->
+        <!--<dependency>-->
+            <!--<groupId>org.wso2.lmax</groupId>-->
+            <!--<artifactId>disruptor</artifactId>-->
+            <!--<version>3.3.0.wso2v1</version>-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/io.siddhi/siddhi-core -->
+        <dependency>
+            <groupId>io.siddhi</groupId>
+            <artifactId>siddhi-core</artifactId>
+            <version>5.1.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.siddhi/siddhi-query-api -->
+        <dependency>
+            <groupId>io.siddhi</groupId>
+            <artifactId>siddhi-query-api</artifactId>
+            <version>5.1.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.siddhi/siddhi-query-compiler -->
+        <dependency>
+            <groupId>io.siddhi</groupId>
+            <artifactId>siddhi-query-compiler</artifactId>
+            <version>5.1.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.siddhi/siddhi-annotations -->
+        <dependency>
+            <groupId>io.siddhi</groupId>
+            <artifactId>siddhi-annotations</artifactId>
+            <version>5.1.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.wso2.siddhi/siddhi-extension-math -->
+        <dependency>
+            <groupId>org.wso2.siddhi</groupId>
+            <artifactId>siddhi-extension-math</artifactId>
+            <version>3.2.4</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>disruptor</artifactId>
+                    <groupId>org.wso2.orbit.com.lmax</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.siddhi.extension.execution.math/siddhi-execution-math -->
+        <dependency>
+            <groupId>io.siddhi.extension.execution.math</groupId>
+            <artifactId>siddhi-execution-math</artifactId>
+            <version>5.0.4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.siddhi.extension.execution.string/siddhi-execution-string -->
+        <dependency>
+            <groupId>io.siddhi.extension.execution.string</groupId>
+            <artifactId>siddhi-execution-string</artifactId>
+            <version>5.0.7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.wso2.orbit.com.lmax/disruptor -->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.log4j.wso2</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17.wso2v1</version>
+        </dependency>
+
+
+
+
     </dependencies>
 
 </project>
