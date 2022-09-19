@@ -15,7 +15,7 @@ public class TheFrogTheStepsTest {
 
     @Test
     public void numWays() {
-        int i = TheFrogTheSteps.numWays(50);
-        System.out.println(i);
+//        int i = TheFrogTheSteps.numWays(50);
+//        System.out.println(i);
     }
 }
