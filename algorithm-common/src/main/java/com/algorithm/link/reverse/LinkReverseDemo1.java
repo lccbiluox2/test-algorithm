@@ -1,6 +1,7 @@
 package com.algorithm.link.reverse;
 
 import com.algorithm.link.entity.Node;
+import com.algorithm.offer_bible.entity.ListNode;
 
 /**
  * @author: chuanchuan.lcc
@@ -34,4 +35,23 @@ public class LinkReverseDemo1 {
         return preNode;
     }
 
+    /**
+     *todo: 9/25/22 9:04 PM 九师兄
+     * 测试点：测试使用递归反转单向链表
+     **/
+    public ListNode reverseList(ListNode head){
+        /**
+         *todo: 9/25/22 9:05 PM 九师兄
+         * 如果链表为空，那么说明没法反转链表 如果当前节点下个节点为空，那么说明只有一个节点
+         * 所以也不需要反转链表
+         **/
+        if(head == null || head.next == null) return head;
+
+        ListNode newHead = reverseList(head.next);
+
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    }
 }

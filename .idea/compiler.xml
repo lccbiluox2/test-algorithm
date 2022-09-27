@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="algorithm-common" />
+        <module name="algorithm-book" />
         <module name="leetcode-sword-offer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="algorithm-common" target="8" />
-      <module name="leetcode-sword-offer" target="8" />
+      <module name="algorithm-book" target="1.8" />
+      <module name="algorithm-common" target="1.8" />
+      <module name="leetcode-sword-offer" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
