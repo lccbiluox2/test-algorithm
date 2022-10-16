@@ -41,4 +41,11 @@ public class RadixSortTest {
         int[] arr = {53,3,542,748,14,214};
         RadixSort.radixSortEvolution(arr);
     }
+
+    @Test
+    public void radixSortV2() {
+        int[] arr = {53,3,542,748,14,214};
+        RadixSort.radixSortV2(arr);
+    }
+
 }

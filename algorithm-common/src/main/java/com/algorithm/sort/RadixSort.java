@@ -176,4 +176,61 @@ public class RadixSort {
         }
         return max;
     }
+
+    /***
+     * todo: 2022/10/16 下午9:06 lcc 九师兄
+     *   看左神大佬讲解基数排序
+     */
+    public static void radixSortV2(int[] arr) {
+        if(arr == null || arr.length < 2){
+            return;
+        }
+        radixSortv2(arr,0,arr.length-1,maxBits(arr));
+    }
+
+    private static void radixSortv2(int[] arr, int L, int R, int digit) {
+        final int radix = 10;
+        int i = 0,j =0 ;
+        int[] bucket = new int[R-L+1];
+        for (int d = 0; d < digit ; d++) {
+            int[] count = new int[radix];
+            for (i = L; i < R; i++) {
+                j = getDigit(arr[i],d);
+                count[j]++;
+            }
+            for (i = 1; i < radix; i++) {
+                count[i] =count[i]+count[i-1];
+            }
+            for (i = R; i >= L; i--) {
+                j = getDigit(arr[i],d);
+                bucket[count[j-1]] = arr[i];
+                count[j]--;
+            }
+            for (i = L,j=0; i < R; i++,j++) {
+                arr[i] = bucket[j];
+            }
+        }
+        
+    }
+
+    private static int getDigit(int x, int d) {
+        return ((x / ((int) Math.pow(10,d -1)))% 10);
+    }
+
+    /***
+     * todo: 2022/10/16 下午9:11 lcc 九师兄
+     *
+     */
+    private static int maxBits(int[] arr) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            max = Math.max(max,arr[i]);
+        }
+        int res =0;
+        while (max != 0){
+            res++;
+            max /=10;
+        }
+        return res;
+    }
 }
