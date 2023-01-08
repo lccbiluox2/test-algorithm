@@ -83,4 +83,71 @@ public class LinkIntersectionTest {
         ListNode listNode = linkIntersection.getIntersectionNode1(A, o1);
         System.out.println(listNode);
     }
+
+
+    /***
+     * todo: 2023/1/8 下午6:21 lcc 九师兄
+     *  测试两个链表无环结构
+     *  测试结果如下
+     *  ListNode{val=2, next=ListNode{val=4, next=null}}
+     */
+    @Test
+    public void noLoopTest(){
+        ListNode A = new ListNode(0);
+        ListNode B = new ListNode(9);
+        ListNode C = new ListNode(1);
+        ListNode D = new ListNode(2);
+        ListNode E = new ListNode(4);
+
+        A.next = B;
+        B.next = C;
+        C.next = D;
+        D.next = E;
+
+
+        ListNode o1 = new ListNode(3);
+
+
+        o1.next = D;
+        D.next = E;
+
+        ListNode listNode = linkIntersection.noLoop(A, o1);
+        System.out.println(listNode);
+    }
+
+    /***
+     * todo: 2023/1/8 下午6:21 lcc 九师兄
+     *  测试两个链表有环结构下 第一个相交的节点
+     *  先测试一个相交的节点
+     *  测试结果如下
+     *  好像没有测试成功
+     */
+    @Test
+    public void getIntersectionNodeV2Test1(){
+        ListNode A = new ListNode(0);
+        ListNode B = new ListNode(9);
+        ListNode C = new ListNode(1);
+        ListNode D = new ListNode(2);
+        ListNode E = new ListNode(4);
+
+        A.next = B;
+        B.next = C;
+        C.next = D;
+        D.next = E;
+        E.next = C; // c点有环
+
+
+        ListNode A1 = new ListNode(6);
+        ListNode B1 = new ListNode(7);
+
+        A1.next = B1;
+        B1.next = C;
+        C.next = D;
+        D.next = E;
+        E.next = C; // c点有环
+
+
+        ListNode listNode = linkIntersection.getIntersectionNodeV2(A, A1);
+        System.out.println(listNode);
+    }
 }
