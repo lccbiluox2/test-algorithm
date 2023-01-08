@@ -46,6 +46,11 @@ public class MinSum {
         return process(args, 0, args.length - 1);
     }
 
+    /***
+     * todo: 2023/1/2 下午9:22 lcc 九师兄
+     *  【算法】归并排序 小和 问题
+     *  https://blog.csdn.net/qq_21383435/article/details/120256793
+     */
     private static int process(int[] arr, int L, int R) {
         if (L == R) {
             return 0;
@@ -68,7 +73,9 @@ public class MinSum {
         int p1 = L;
         int p2 = M + 1;
         int res = 0;
+        // 都不越界的情况
         while (p1 <= M && p2 <= R) {
+            // 左边的小于右边的
             res += arr[p1] < arr[p2] ? (R - p2 + 1) * arr[p1] : 0;
             help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
         }

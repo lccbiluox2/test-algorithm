@@ -19,13 +19,17 @@ public class MergeSort {
     }
 
     private static void process(Integer[] arr, int L, int R) {
+        // 如果只有一个数 就不排序了
         if (L == R) {
             return;
         }
 
         int mid = L + ((R - L) >> 1);
+        // 左侧有序
         process(arr, L, mid);
+        // 右侧有序
         process(arr, mid + 1, R);
+        // 合并
         merge(arr, L, mid, R);
     }
 
@@ -34,15 +38,23 @@ public class MergeSort {
         int i = 0;
         int p1 = L;
         int p2 = M + 1;
+        // 两边都不越界的时候
         while (p1 <= M && p2 <= R) {
             help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
         }
+        // 其中一个越界了
+
+        // 如果是p1没有越界，那么就拷贝p1剩下的东西
         while (p1 <= M) {
             help[i++] = arr[p1++];
         }
+
+        // 如果是p2没有越界，那么就拷贝p2剩下的东西
         while (p2 <= R) {
             help[i++] = arr[p2++];
         }
+
+
         for (i = 0; i < help.length; i++) {
             arr[L + i] = help[i];
         }
