@@ -34,6 +34,12 @@ public class BinaryTreeDemo {
     }
 
 
+    /***
+     * todo: 2023/1/8 下午10:37 lcc 九师兄
+     *   【算法】二叉树的前序遍历、中序遍历、后续遍历
+     *   https://blog.csdn.net/qq_21383435/article/details/128605288
+     */
+
     /**
      * 二叉树前序遍历
      *
