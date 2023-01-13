@@ -2,6 +2,10 @@ package com.algorithm.tree.binarysorttree;
 
 import com.algorithm.entity.tree.TreeNode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class IsSortTree {
 
 
@@ -32,5 +36,34 @@ public class IsSortTree {
 
         // 返回右边树是不是
         return isBst(node.rightChild);
+    }
+
+
+    public static boolean isBstV2(TreeNode head){
+        System.out.println("中序遍历");
+        if(head != null){
+            Integer preValue = Integer.MIN_VALUE;
+            Stack<TreeNode> stack = new Stack<>();
+            while (!stack.isEmpty() || head != null){
+                if(head != null){
+                    stack.push(head);
+                    head = head.leftChild;
+                }else {
+                    head = stack.pop();
+
+                    if(head.data <= preValue){
+                        // 如果当前值小于上一次的值 那么就不是搜索二叉树
+                        return false;
+                    }else {
+                        // 否则就是当前值比上次还大 那么就替换元素
+                        preValue = head.data;
+                    }
+
+                    head = head.rightChild;
+                }
+            }
+        }
+        System.out.println();
+        return true;
     }
 }

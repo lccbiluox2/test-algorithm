@@ -121,6 +121,8 @@ public class BinaryTreeDemo {
     /**
      * 二叉树层序遍历
      *
+     * 一样的代码参考：com.algorithm.tree.BinaryTreeNotRecursion#inOrderUnRecur(com.algorithm.entity.tree.TreeNode)
+     *
      * @param root 二叉树根节点
      */
     public static void levelOrderTraversal(TreeNode root) {

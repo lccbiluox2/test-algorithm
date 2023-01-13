@@ -66,6 +66,8 @@ public class BinaryTreeNotRecursion {
     /**
      * todo: 2023/1/11 下午9:29 九师兄
      *     测试点: 测试不使用递归方式实现 二叉树的中序遍历
+     *
+     *     一样的代码参考：com.algorithm.tree.BinaryTreeDemo#levelOrderTraversal(com.algorithm.tree.BinaryTreeDemo.TreeNode)
      */
     public static void inOrderUnRecur(TreeNode head){
         System.out.println("中序遍历");
