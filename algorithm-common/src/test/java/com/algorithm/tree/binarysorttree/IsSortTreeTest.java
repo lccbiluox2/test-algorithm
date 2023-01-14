@@ -115,4 +115,32 @@ public class IsSortTreeTest {
         boolean bst = IsSortTree.isBstV2(treeNodeA);
         System.out.println(bst);
     }
+
+
+    @Test
+    public void isBstV3() {
+        TreeNode treeNodeA = new TreeNode(7);
+
+        TreeNode  treeNodeB1 = new TreeNode(5);
+        TreeNode  treeNodeB2 = new TreeNode(9);
+
+        TreeNode  treeNodeC1 = new TreeNode(3);
+        TreeNode  treeNodeC2 = new TreeNode(6);
+        TreeNode  treeNodeC3 = new TreeNode(8);
+        TreeNode  treeNodeC4 = new TreeNode(10);
+
+        treeNodeA.leftChild = treeNodeB1;
+        treeNodeA.rightChild = treeNodeB2;
+
+        treeNodeB1.leftChild = treeNodeC1;
+        treeNodeB1.rightChild = treeNodeC2;
+
+        treeNodeB2.leftChild = treeNodeC3;
+        treeNodeB2.rightChild = treeNodeC4;
+
+        TreeUtils.printPrettyTree(treeNodeA);
+
+        boolean bst = IsSortTree.isBstV3(treeNodeA);
+        System.out.println(bst);
+    }
 }

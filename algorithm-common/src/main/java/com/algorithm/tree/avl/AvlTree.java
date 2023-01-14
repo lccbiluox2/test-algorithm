@@ -6,6 +6,9 @@ package com.algorithm.tree.avl;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 【算法】平衡二叉树 Avl 树
+ * https://blog.csdn.net/qq_21383435/article/details/121195732
  */
 //创建二叉排序树
 class AvlTree {
