@@ -8,6 +8,9 @@ import java.util.Arrays;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 【算法】普里姆算法 Prim算法解决修路问题
+ * https://blog.csdn.net/qq_21383435/article/details/121315739
  */
 public class PrimAlgorithm {
 
