@@ -8,6 +8,9 @@ import java.util.Arrays;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 【算法】迪杰斯特拉算法 最短路径算法
+ * https://blog.csdn.net/qq_21383435/article/details/121453260
  */
 public class DijkstraAlgorithm {
 
