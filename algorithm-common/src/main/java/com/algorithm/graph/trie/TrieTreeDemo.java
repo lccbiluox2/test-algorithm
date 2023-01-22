@@ -1,5 +1,10 @@
 package com.algorithm.graph.trie;
 
+/***
+ * todo: 4_5Lmd5biI5YWE5ZSv5LiA5Y6f5Yib5paH56ug77yM56aB5q2i6L2s6L29_4  2023/1/22 下午8:07 4 九师兄
+ *       【算法】图的前缀树
+ *       https://blog.csdn.net/qq_21383435/article/details/128732350
+ */
 public class TrieTreeDemo {
 
     private class TrieNode {
