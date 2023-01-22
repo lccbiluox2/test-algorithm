@@ -9,6 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="algorithm-common" />
         <module name="algorithm-book" />
+      </profile>
+      <profile name="Annotation profile for leetcode-sword-offer" enabled="true">
+        <sourceOutputDir name="../../../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
         <module name="leetcode-sword-offer" />
       </profile>
     </annotationProcessing>
