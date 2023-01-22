@@ -15,6 +15,9 @@ import java.util.Set;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description: 贪婪算法计算广播问题
+ *
+ * 【算法】贪心算法
+ *  https://blog.csdn.net/qq_21383435/article/details/121314198
  */
 public class GreedyAlgorithm {
 
