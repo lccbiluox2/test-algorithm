@@ -1,4 +1,4 @@
-package com.algorithm.common;
+package com.algorithm.greedy;
 
 import java.util.PriorityQueue;
 
