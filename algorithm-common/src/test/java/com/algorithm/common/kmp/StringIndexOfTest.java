@@ -22,6 +22,19 @@ public class StringIndexOfTest {
      *
      * 为什么Java String indexOf 没有使用更加“高效”的算法
      *
+     * 参考： java - Why does String.indexOf() not use KMP? - Stack Overflow
+     *
+     * 原来JDK的编写者们认为大多数情况下，字符串都不长，使用原始实现可能代价更低。
+     * 因为KMP和Boyer-Moore算法都需要预先计算处理来获得辅助数组，需要一定的时间和空间，这可能
+     * 在短字符串查找中相比较原始实现耗费更大的代价。在短字符串测试过程中，使用indexOf方法时要比
+     * KMP算法要快一点。KMP算法对与超长字符串子匹配速度上是优于IndexOf的。
+     *
+     * 因为KMP算法需要预先计算处理来获得辅助数组，需要一定的时间和空间，这可能在短字符串查找中相比
+     * 较原始实现耗费更大的代价。
+     *
+     * 而且一般大字符串查找时，程序员们也会使用其它特定的数据结构，查找起来更简单。这有点类似于
+     * 排除特定情况下的快速排序了。不同环境选择不同算法。
+     *
      * 总结起来有两点：
      * ① 高效的算法BM和KMP都是需要空间作为代价的，特别是BM，任何一个字符串都需要至少64K内存，
      *   考虑到L1 Cache大小，cost更不可知。
@@ -31,6 +44,7 @@ public class StringIndexOfTest {
      *   然后实现BM或KMP）或调用第三方工具专门处理。
      *
      * 原文链接：https://blog.csdn.net/ProLayman/article/details/118031534
+     * https://blog.csdn.net/zzhongcy/article/details/128726066
      */
     @Test
     public void stringIndexOfTest(){
