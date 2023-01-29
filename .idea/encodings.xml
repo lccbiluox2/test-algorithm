@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/algorithm-book" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithm-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/algorithm-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/algorithm-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/leetcode-sword-offer" charset="UTF-8" />
   </component>
 </project>
