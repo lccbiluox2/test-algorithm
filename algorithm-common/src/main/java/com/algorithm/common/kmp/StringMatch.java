@@ -6,6 +6,9 @@ package com.algorithm.common.kmp;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 【KMP】KMP 字符串匹配算法
+ * https://blog.csdn.net/qq_21383435/article/details/121308297
  */
 public class StringMatch {
 
