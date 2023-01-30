@@ -1,5 +1,6 @@
 package com.algorithm.link.reverse;
 
+import com.algorithm.entity.link.ListNode;
 import com.algorithm.link.entity.Node;
 import org.junit.Test;
 
@@ -28,6 +29,43 @@ public class LinkReverseDemo1Test {
         System.out.println(reverseNode.getData());
         System.out.println(reverseNode.getNext().getData());
         System.out.println(reverseNode.getNext().getNext().getData());
+
+    }
+
+    /**
+     * todo:  36_5Lmd5biI5YWE5ZSv5LiA5Y6f5Yib5paH56ug77yM56aB5q2i6L2s6L29_36  2023/1/30 13:55 九师兄
+     *     测试点: 测试递归反转链表 使用递归的方式
+     *     https://juejin.cn/post/6844904022344744967
+     */
+    @Test
+    public void reverseList() {
+        ListNode node1 = new ListNode(1,null);
+        ListNode node2 = new ListNode(2,node1);
+        ListNode node3 = new ListNode(3,node2);
+
+        ListNode reverseNode = LinkReverseDemo1.reverseList(node3);
+
+        System.out.println(reverseNode.val);
+        System.out.println(reverseNode.next.val);
+        System.out.println(reverseNode.next.next.val);
+
+    }
+
+    /**
+     * todo:  60_5Lmd5biI5YWE5ZSv5LiA5Y6f5Yib5paH56ug77yM56aB5q2i6L2s6L29_60  2023/1/30 13:58 九师兄
+     *     测试点: 反转链表使用栈的方式
+     */
+    @Test
+    public void reverserLinkedList2() {
+        ListNode node1 = new ListNode(1,null);
+        ListNode node2 = new ListNode(2,node1);
+        ListNode node3 = new ListNode(3,node2);
+
+        ListNode reverseNode = LinkReverseDemo1.reverserLinkedList2(node3);
+
+        System.out.println(reverseNode.val);
+        System.out.println(reverseNode.next.val);
+        System.out.println(reverseNode.next.next.val);
 
     }
 }

@@ -1,7 +1,9 @@
 package com.algorithm.link.reverse;
 
+import com.algorithm.entity.link.ListNode;
 import com.algorithm.link.entity.Node;
-import com.algorithm.offer_bible.entity.ListNode;
+
+import java.util.Stack;
 
 /**
  * @author: chuanchuan.lcc
@@ -39,7 +41,7 @@ public class LinkReverseDemo1 {
      *todo: 9/25/22 9:04 PM 九师兄
      * 测试点：测试使用递归反转单向链表
      **/
-    public ListNode reverseList(ListNode head){
+    public static ListNode reverseList(ListNode head){
         /**
          *todo: 9/25/22 9:05 PM 九师兄
          * 如果链表为空，那么说明没法反转链表 如果当前节点下个节点为空，那么说明只有一个节点
@@ -53,5 +55,31 @@ public class LinkReverseDemo1 {
         head.next = null;
 
         return newHead;
+    }
+
+
+    /**
+     * todo:  60_5Lmd5biI5YWE5ZSv5LiA5Y6f5Yib5paH56ug77yM56aB5q2i6L2s6L29_60  2023/1/30 13:58 九师兄
+     *     测试点: 反转链表使用栈的方式
+     */
+    public static ListNode reverserLinkedList2(ListNode node){
+        Stack<ListNode> nodeStack = new Stack<>();
+        ListNode head = null;
+        //存入栈中，模拟递归开始的栈状态
+        while (node != null){
+            nodeStack.push(node);
+            node = node.next;
+        }
+        //特殊处理第一个栈顶元素（也就是反转前的最后一个元素，因为它位于最后，不需要反转，如果它参与下面的while，因为它的下一个节点为空，如果getNode()， 那么为空指针异常）
+        if ((!nodeStack.isEmpty())){
+            head = nodeStack.pop();
+        }
+        //排除以后就可以快乐的循环
+        while (!nodeStack.isEmpty()){
+            ListNode tempNode = nodeStack.pop();
+            tempNode.next.next = tempNode;
+            tempNode.next = null;
+        }
+        return head;
     }
 }
