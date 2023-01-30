@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class CountSort {
 
     /**
-     * 测试点:腾讯面试题，你高考考了600分，不使用排序，如何知道你的名词
+     * 测试点:腾讯面试题，你高考考了600分，不使用排序，如何知道你的名次
      * 核心思考： 参考：https://www.bilibili.com/video/BV14i4y1T7Af?p=20
      * 桶排序，计数排序
      * <p>
