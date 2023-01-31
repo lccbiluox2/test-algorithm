@@ -11,6 +11,8 @@ import java.util.Stack;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description: todo: 逆波兰 表达式  https://www.bilibili.com/video/BV1E4411H73v?p=37
+ * 计算器
+ * https://blog.csdn.net/qq_21383435/article/details/120539224
  */
 public class PolandNotation {
 
