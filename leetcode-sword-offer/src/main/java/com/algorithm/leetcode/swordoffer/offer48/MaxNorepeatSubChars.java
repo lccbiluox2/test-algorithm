@@ -81,6 +81,32 @@ public class MaxNorepeatSubChars {
         return max;
     }
 
+    /***
+     * todo: 九师兄  2023/3/11 22:04
+     *       完全看不懂这个代码
+     *       【算子】不重复字符串子串最长长度
+     *       https://blog.csdn.net/qq_21383435/article/details/128995821
+     */
+    public int maxUnique(String str) {
+        if(str == null || str.equals("")){
+            return 0;
+        }
+        char[] chars = str.toCharArray();
+        int[] map = new int[256];// map替代了hash表 假设字符的码是0-255
+        for (int i = 0; i < 256; i++) {
+            map[i] = -1;
+        }
+        int len = 0;
+        int pre = -1;
+        int cur = 0;
+        for (int i = 0; i < chars.length; i++) {
+            pre = Math.max(pre,map[chars[i]]);
+            cur = i -pre;
+            len = Math.max(len,cur);
+            map[chars[i]] = i;
+        }
+        return len;
+    }
 
 
 

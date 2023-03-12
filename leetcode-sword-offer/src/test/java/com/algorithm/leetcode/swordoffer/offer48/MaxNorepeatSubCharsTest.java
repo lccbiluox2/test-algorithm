@@ -35,6 +35,11 @@ public class MaxNorepeatSubCharsTest {
     }
 
     @Test
+    public void maxUnique() {
+        System.out.println(client.maxUnique("abcabcbb"));
+    }
+
+    @Test
     public void lengthOfLongestSubstring2_1() {
         System.out.println(client.lengthOfLongestSubstring2("abcabcbb"));
         System.out.println(client.lengthOfLongestSubstring2("bbbbb"));
