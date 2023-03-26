@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/algorithm-book/algorithm-book.iml" filepath="$PROJECT_DIR$/algorithm-book/algorithm-book.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithm-common/algorithm-common.iml" filepath="$PROJECT_DIR$/algorithm-common/algorithm-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/leetcode-sword-offer/leetcode-sword-offer.iml" filepath="$PROJECT_DIR$/leetcode-sword-offer/leetcode-sword-offer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode-anwser/leetcode-anwser.iml" filepath="$PROJECT_DIR$/leetcode-anwser/leetcode-anwser.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/test-algorithm.iml" filepath="$PROJECT_DIR$/.idea/test-algorithm.iml" />
     </modules>
   </component>
