@@ -10,7 +10,7 @@ public class StepJumpingTest {
 
     @Test
     public void stepJumping() {
-        int i = stepJumping.stepJumping(10);
+        int i = stepJumping.stepJumping(5);
         System.out.println(i);
     }
 
