@@ -57,4 +57,13 @@ public class SolutionTest {
         long end = System.currentTimeMillis();
         System.out.println("用时：" +(end - start));
     }
+
+    @Test
+    public void fibonacci() {
+        long start = System.currentTimeMillis();
+        int fib = solution.fibonacci(20);
+        System.out.println(fib);
+        long end = System.currentTimeMillis();
+        System.out.println("用时：" +(end - start));
+    }
 }
