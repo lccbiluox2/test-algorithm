@@ -113,4 +113,24 @@ public class Solution {
         }
         return first;
     }
+
+    /***
+     * todo: 九师兄  2023/5/21 10:07
+     *
+     * 测试点：测试 斐波那契数列 使用 动态规划的方式
+     * 经过测试 这个方案 有缺陷 如果是 小数字 还好，如果是大数值
+     * 会导致产生负数
+     */
+    public int fibonacci(int n) {
+        if (n <= 1)
+            return n;
+        int[] fib = new int[n + 1];
+        fib[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            int preOne = i - 1;
+            int preTwo = i - 2;
+            fib[i] = fib[preOne] + fib[preTwo];
+        }
+        return fib[n];
+    }
 }
