@@ -12,7 +12,7 @@ import com.algorithm.tree.BinaryTreeDemo;
 public class BinarySortTreeDemo {
 
     public void makeTree() {
-        int[] arr = {7, 3, 10, 12, 5, 1, 9};
+        int[] arr = {1, 3, 10, 12, 5, 1, 9};
         BinarySortTree binarySortTree = new BinarySortTree();
         //循环的添加结点到二叉排序树
         for (int i = 0; i < arr.length; i++) {
