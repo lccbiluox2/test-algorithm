@@ -9,6 +9,9 @@ import org.junit.Test;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 剑指 Offer 13. 机器人的运动范围 【重刷】
+ * https://blog.csdn.net/qq_21383435/article/details/121538897
  */
 public class Solution1Test {
 
@@ -31,16 +34,15 @@ public class Solution1Test {
 
     @Test
     public void movingCount() {
-        int abcced = method.movingCount(7, 2, 3);
+        int abcced = method.movingCount(4, 4, 3);
         System.out.println(abcced);
 
         System.out.println();
         System.out.println();
-        for (int i = 0; i < 7; i++) {
-            for (int j = 0; j < 2; j++) {
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 System.out.print("(" + i + "," + j + ")\t");
             }
-            System.out.println();
             System.out.println();
         }
 

@@ -8,6 +8,9 @@ import java.util.Arrays;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 【算法】剑指 Offer 12. 矩阵中的路径
+ * https://blog.csdn.net/qq_21383435/article/details/121505173
  */
 public class Leetcode1 {
 
@@ -15,6 +18,7 @@ public class Leetcode1 {
         int m = board.length;
         int n = board[0].length;
 
+        // 遍历每个位置 找字符串的起点位置
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 //  搜索开始的位置可以是网格 board 中的任一个位置
@@ -35,6 +39,7 @@ public class Leetcode1 {
 
         if (k == word.length() - 1) return true; // 说明word中的字符全部被匹配
 
+        // todo：标记A: 标记A 和 标记B 两者形成了回溯
         board[i][j] = '\0'; // 使用board数组充当了访问标记数组，节省了空间（非常妙！）
 
         printArray("B当前状态", board, i, j, k, word);
@@ -45,6 +50,7 @@ public class Leetcode1 {
                         || backtrack(board, i - 1, j, word, k + 1)
                         || backtrack(board, i, j - 1, word, k + 1);
 
+        // todo：标记B: 标记A 和 标记B 两者形成了回溯
         board[i][j] = word.charAt(k); // 撤销选择, 还原board数组
 
         printArray("C当前状态", board, i, j, k, word);
