@@ -1,6 +1,7 @@
 package com.algorithm.utils;
 
-import com.algorithm.offer_bible.entity.ListNode;
+
+import com.algorithm.entity.link.ListNode;
 
 public class LinkListUtils {
 
@@ -29,5 +30,6 @@ public class LinkListUtils {
             System.out.print(head.val + "->");
             head = head.next;
         }
+        System.out.println();
     }
 }
