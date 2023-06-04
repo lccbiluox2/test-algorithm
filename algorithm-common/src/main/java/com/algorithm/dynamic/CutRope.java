@@ -19,12 +19,7 @@ public class CutRope {
      * 这个算法第一眼看到的时候，我想的就是 这个和青蛙跳台阶有点相似
      * {@link StepJumpingV2 }
      *
-     *
-     * 假设长度为1 那么最长有 1
-     * 假设长度为2 那么最长有 1*1=1
-     * 假设长度为3 那么最长有 1*2=2
-     *
-     *
+     * todo: 太难了 老子不会
      */
     public int jumpFloorII(int target) {
         int[] dp = new int[target];

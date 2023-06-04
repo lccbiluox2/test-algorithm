@@ -2,9 +2,13 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/algorithm-book" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/algorithm-book/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/algorithm-book/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithm-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithm-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/algorithm-common/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/leetcode-anwser" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/leetcode-anwser/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/leetcode-anwser/src/main/resources" charset="UTF-8" />
   </component>
 </project>
