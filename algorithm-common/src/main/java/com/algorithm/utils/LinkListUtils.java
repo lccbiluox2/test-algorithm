@@ -20,4 +20,14 @@ public class LinkListUtils {
         return dummyNode.next;
     }
 
+    public static void printLinkList(com.algorithm.entity.link.ListNode head) {
+        if(head == null){
+            System.out.print("null");
+            return;
+        }
+        while (head != null){
+            System.out.print(head.val + "->");
+            head = head.next;
+        }
+    }
 }
