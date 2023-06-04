@@ -1,4 +1,4 @@
-package com.algorithm.mathematics;
+package com.algorithm.num;
 
 /**
  * @author: chuanchuan.lcc

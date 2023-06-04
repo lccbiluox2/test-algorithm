@@ -1,8 +1,6 @@
-package com.algorithm.mathematics;
+package com.algorithm.num;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author: chuanchuan.lcc

@@ -1,6 +1,5 @@
-package com.algorithm.mathematics;
+package com.algorithm.num;
 
-import com.algorithm.utils.ArraysUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
