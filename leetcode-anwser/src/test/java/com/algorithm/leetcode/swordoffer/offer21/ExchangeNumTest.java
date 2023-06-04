@@ -67,4 +67,10 @@ public class ExchangeNumTest {
         exchangeNum.exchange(data);
     }
 
+    @Test
+    public void exchange2() {
+        int[] data = new int[]{1,3,4,5,8,7};
+        exchangeNum.reOrderArrayV1(data);
+    }
+
 }

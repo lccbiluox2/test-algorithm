@@ -12,6 +12,9 @@ import java.util.List;
  * @modifiedBy: chuanchuan.lcc
  * @version: 1.0
  * @description:
+ *
+ * 【算法】给定一个链表，判断链表中是否有环
+ * https://blog.csdn.net/qq_21383435/article/details/120691236
  */
 public class LinkHashRing {
 

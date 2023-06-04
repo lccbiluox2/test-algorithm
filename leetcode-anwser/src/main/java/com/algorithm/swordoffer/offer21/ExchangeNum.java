@@ -23,6 +23,9 @@ import java.util.Arrays;
  * <p>
  * 0 <= nums.length <= 50000
  * 0 <= nums[i] <= 10000
+ *
+ * 【算法】剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
+ * https://blog.csdn.net/qq_21383435/article/details/121592071
  */
 public class ExchangeNum {
 
@@ -83,5 +86,56 @@ public class ExchangeNum {
             }
         }
         return nums;
+    }
+
+    /***
+     * todo: 九师兄  2023/6/4 20:26
+     * 方法一：创建一个新数组，时间复杂度 O(N)，空间复杂度 O(N)。
+     */
+    public int[] reOrderArray (int[] nums) {
+        // 奇数个数
+        int oddCnt = 0;
+        for (int x : nums)
+            if (!isEven(x))
+                oddCnt++;
+        int[] copy = nums.clone();
+        int i = 0, j = oddCnt;
+        for (int num : copy) {
+            if (num % 2 == 1)
+                nums[i++] = num;
+            else
+                nums[j++] = num;
+        }
+        return nums;
+    }
+
+    private boolean isEven(int x) {
+        return x % 2 == 0;
+    }
+
+    /***
+     * todo: 九师兄  2023/6/4 20:26
+     *
+     *  方法二：使用冒泡思想，每次都将当前偶数上浮到当前最右边。时间复杂度 O(N2)，
+     *  空间复杂度 O(1)，时间换空间。
+     *
+     */
+    public int[] reOrderArrayV1(int[] nums) {
+        int N = nums.length;
+        for (int i = N - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (isEven(nums[j]) && !isEven(nums[j + 1])) {
+                    swap(nums, j, j + 1);
+                }
+            }
+        }
+        return nums;
+    }
+
+
+    private void swap(int[] nums, int i, int j) {
+        int t = nums[i];
+        nums[i] = nums[j];
+        nums[j] = t;
     }
 }
