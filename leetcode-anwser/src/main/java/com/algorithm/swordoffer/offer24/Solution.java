@@ -44,6 +44,10 @@ public class Solution {
         return newHead;
     }
 
+    /***
+     * todo: 九师兄  2023/6/5 09:46
+     * 入栈操作，递归方式
+     */
     public void stackData(ListNode head) {
         if (head == null) {
             return;

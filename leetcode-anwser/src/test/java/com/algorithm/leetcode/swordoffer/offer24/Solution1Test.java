@@ -15,6 +15,13 @@ public class Solution1Test {
 
     Solution1 solution = new Solution1();
 
+    /***
+     * todo: 九师兄  2023/6/5 09:49
+     * 测试点：测试反转链表 使用了第三个变量
+     * 感觉和数组交换差不多
+     *
+     * 使用头插法
+     */
     @Test
     public void reversePrint() {
         ListNode head = new ListNode(1);

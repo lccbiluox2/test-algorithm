@@ -16,6 +16,10 @@ public class SolutionTest {
 
     Solution solution = new Solution();
 
+    /***
+     * todo: 九师兄  2023/6/5 09:46
+     * 测试点：测试使用栈的方式实现链表的反转
+     */
     @Test
     public void reversePrint() {
         ListNode head = new ListNode(1);

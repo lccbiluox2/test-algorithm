@@ -13,6 +13,12 @@ import com.algorithm.swordoffer.entity.ListNode;
  */
 public class RecursiveSolution {
 
+    /***
+     * todo: 九师兄  2023/6/5 09:42
+     *
+     * 【算法】剑指 Offer 24. 反转链表
+     * https://blog.csdn.net/qq_21383435/article/details/121557972
+     */
     public ListNode reverseList(ListNode head) {
         if(head == null || head.next == null) {
             return head;
