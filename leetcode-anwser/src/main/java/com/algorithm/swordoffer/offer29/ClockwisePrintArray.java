@@ -133,14 +133,17 @@ public class ClockwisePrintArray {
 
         //循环打印
         while(top <= bottom && left <= right){
+            // 行不变 列增加 打印一行
             for(int i = left; i <= right; i++){ //从左到右
                 res[k++] = matrix[top][i];
             }
             top ++;
+            // 行+1  列竖着增加 打印一列
             for(int i = top; i <= bottom; i++){ //从上到下
                 res[k++] = matrix[i][right];
             }
             right --;
+            // 列-1  从右边往左边打印
             for(int i = right; i >= left && top <= bottom; i--){    //从右到左
                 res[k++] = matrix[bottom][i];
             }

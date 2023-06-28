@@ -7,7 +7,12 @@ public class ClockwisePrintArrayV2Test {
 
     /**
      *todo: 2023/2/4 21:09 九师兄
-     * 注意这里故意多了一个21
+     * 测试点：册数矩阵顺时针打印 注意这里故意多了一个21
+     *
+     * 节点A:(0,0) 节点B:(3,4)
+     * 1 2 3 4 5 10 15 20 19 18 17 16 11 6 节点A:(1,1) 节点B:(2,3)
+     * 7 8 9 14 13 12
+     * 可以看到21 没有打印出来
      **/
     @Test
     public void spiralorderPrint() {
