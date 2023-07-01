@@ -45,4 +45,19 @@ public class AndNumIsSpecifiedTest {
         int[] ints = andNumIsSpecified.twoSum3(data, 11);
         System.out.println(Arrays.toString(ints));
     }
+
+    /***
+     * todo: 九师兄  2023/7/1 15:22
+     *
+     * 【算法】剑指 Offer 57. 和为s的两个数字
+     * https://blog.csdn.net/qq_21383435/article/details/121598461
+     * 今天再次遇到这个问题，然后一瞬间就想到了这个双指针方法
+     * 然后速度非常的快
+     */
+    @Test
+    public void twoSum5() {
+        int[] data = new int[]{1,3,4,7,9,12,14,15};
+        int[] ints = andNumIsSpecified.twoSum5(data, 11);
+        System.out.println(Arrays.toString(ints));
+    }
 }

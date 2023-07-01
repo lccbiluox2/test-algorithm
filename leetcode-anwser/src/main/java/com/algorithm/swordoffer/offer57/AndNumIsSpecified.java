@@ -30,7 +30,7 @@ import java.util.Set;
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/he-wei-sde-liang-ge-shu-zi-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
- *
+ * <p>
  * 有序数组的 Two Sum
  */
 public class AndNumIsSpecified {
@@ -48,7 +48,7 @@ public class AndNumIsSpecified {
                     return list;
                 }
                 // 这里是优化 因为数组是递增的
-                if((nums[i] + nums[j]) > target){
+                if ((nums[i] + nums[j]) > target) {
                     break;
                 }
             }
@@ -62,10 +62,10 @@ public class AndNumIsSpecified {
     public int[] twoSum1(int[] nums, int target) {
         int[] list = new int[2];
         Random random = new Random();
-        while (true){
+        while (true) {
             int index1 = random.nextInt(nums.length);
             int index2 = random.nextInt(nums.length);
-            while (index1 == index2){
+            while (index1 == index2) {
                 index2 = random.nextInt(nums.length);
             }
             if ((nums[index1] + nums[index2]) == target) {
@@ -100,11 +100,12 @@ public class AndNumIsSpecified {
     /**
      * 数组：1,3,4,7,9,12,14,15
      * 目标：11
-     *
+     * <p>
      * 10
      * 10 8
      * 10 8 7
      * 10 8 7 返回 7 和 4
+     *
      * @param nums
      * @param target
      * @return
@@ -120,6 +121,24 @@ public class AndNumIsSpecified {
         }
 
         return new int[]{};
+    }
+
+    public int[] twoSum5(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int num = nums[left] + nums[right];
+            if (num > target) {
+                right--;
+            }
+            if (num < target) {
+                left++;
+            }
+            if (num == target) {
+                return new int[]{nums[left], nums[right]};
+            }
+        }
+        return null;
     }
 
 }
