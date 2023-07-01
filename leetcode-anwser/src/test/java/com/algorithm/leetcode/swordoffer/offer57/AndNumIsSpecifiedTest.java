@@ -60,4 +60,16 @@ public class AndNumIsSpecifiedTest {
         int[] ints = andNumIsSpecified.twoSum5(data, 11);
         System.out.println(Arrays.toString(ints));
     }
+
+    /***
+     * todo: 九师兄  2023/7/1 16:43
+     * 扩展题目：【算法】和为s的两个数字 最小乘积
+     * https://blog.csdn.net/qq_21383435/article/details/131492106
+     */
+    @Test
+    public void twoSum6() {
+        int[] data = new int[]{1,2,3,4,5,6};
+        int[] ints = andNumIsSpecified.twoSum6(data, 7);
+        System.out.println(Arrays.toString(ints));
+    }
 }

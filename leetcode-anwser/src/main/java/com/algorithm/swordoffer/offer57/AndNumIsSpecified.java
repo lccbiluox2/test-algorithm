@@ -141,4 +141,21 @@ public class AndNumIsSpecified {
         return null;
     }
 
+    public int[] twoSum6(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int num = nums[left] + nums[right];
+            if (num > target) {
+                right--;
+            }
+            if (num < target) {
+                left++;
+            }
+            if (num == target) {
+                return new int[]{nums[left], nums[right]};
+            }
+        }
+        return null;
+    }
 }
