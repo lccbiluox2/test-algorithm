@@ -2,6 +2,7 @@ package com.algorithm.swordoffer.offer59;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
@@ -13,7 +14,7 @@ public class ArraySlidingMaxV1Test {
     @Test
     public void maxSlidingWindow4() {
         int[] numbers = new int[]{1,3,-1,-3,5,3,6,7};
-        int[] ints = arraySlidingMaxV1.maxSlidingWindow4(numbers, 3);
-        System.out.println(Arrays.toString(ints));
+        ArrayList<Integer> ints = arraySlidingMaxV1.maxSlidingWindow4(numbers, 3);
+        System.out.println(ints);
     }
 }

@@ -38,4 +38,20 @@ public class CycleSingleLinkListTest {
     }
 
 
+    @Test
+    public void LastRemaining_Solution() {
+        CycleSingleLinkList cycleSingleLinkList = new CycleSingleLinkList();
+
+        int i = cycleSingleLinkList.LastRemaining_Solution(4, 2);
+        System.out.println(i);
+    }
+
+    @Test
+    public void LastRemaining_Solution1() {
+        CycleSingleLinkList cycleSingleLinkList = new CycleSingleLinkList();
+
+        int i = cycleSingleLinkList.LastRemaining_Solution(5, 2);
+        System.out.println(i);
+    }
+
 }
