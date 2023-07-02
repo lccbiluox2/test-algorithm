@@ -28,13 +28,14 @@ public class StringToNumTest {
 //        int i = stringToNum.strToInt("42");
 //        int i = stringToNum.strToInt("   -42");
 //        int i = stringToNum.strToInt("words and 987");
+        int i = stringToNum.strToInt("1a33");
 //        int i = stringToNum.strToInt("-91283472332");
 //        int i = stringToNum.strToInt("3.14159");
 //        int i = stringToNum.strToInt("-w2.14159");
 //        int i = stringToNum.strToInt("");
 //        int i = stringToNum.strToInt("+1");
 //        int i = stringToNum.strToInt(" ");
-        int i = stringToNum.strToInt("20000000000000000000");
+//        int i = stringToNum.strToInt("20000000000000000000");
         System.out.println(stringToNum.strToInt("42"));
         System.out.println(stringToNum.strToInt("  0000000000012345678"));
     }

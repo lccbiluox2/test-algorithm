@@ -41,7 +41,7 @@ public class StringToNum {
                 continue;
             }
             if (ch < 48 || 57 < ch) {
-                break;
+                return 0;
             }
             notZreo = false;
             builder.append(ch);
@@ -141,4 +141,30 @@ public class StringToNum {
         return res * sign;
     }
 
+    /***
+     * todo: 九师兄  2023/7/2 14:27
+     * 新的方法
+     */
+    public int strToInt3(String str) {
+        int sign=1;
+        long ret = 0;
+        char[] arr = str.toCharArray();
+        for(int i=0;i< arr.length;i++){
+            if(arr[i]==' '){
+                continue;
+            }
+            else if(arr[i]=='-'){
+                sign=-1;
+            }
+            else if(arr[i]=='+'){
+            }
+            else if(arr[i]>='0'&&arr[i]<='9'){
+                ret = ret*10+(arr[i]-'0');
+            }
+            else{
+                return 0;
+            }
+        }
+        return (int) (sign * ret);
+    }
 }
