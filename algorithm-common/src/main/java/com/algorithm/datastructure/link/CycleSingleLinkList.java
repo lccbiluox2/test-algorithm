@@ -2,6 +2,9 @@ package com.algorithm.datastructure.link;
 
 import com.algorithm.datastructure.link.entity.Boy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author: chuanchuan.lcc
  * @date: 2021-09-23 21:51
@@ -59,6 +62,12 @@ public class CycleSingleLinkList {
         }
     }
 
+    /***
+     * todo: 九师兄  2023/7/2 11:58
+     *
+     * 【算法】约瑟夫环问题
+     * https://blog.csdn.net/qq_21383435/article/details/131498360
+     */
     public int count(int startNo, int countNum, int nums) {
         if (first == null || countNum < 1 || nums < countNum) {
             System.out.println("数据异常");
@@ -80,6 +89,7 @@ public class CycleSingleLinkList {
             helper = helper.next;
         }
 
+        List<Integer> orderList = new ArrayList<>();
         while (true) {
             if (helper == first) {
                 System.out.println("此时圈子中只有一个值");
@@ -92,10 +102,14 @@ public class CycleSingleLinkList {
             }
             // first 此时代表要出圈的小孩
             System.out.println("小孩" + first.no + "出圈");
+            orderList.add(first.no);
             first = first.next;
             helper.next = first;
         }
         System.out.println("最后在圈子里的小孩" + helper.no);
+        System.out.println("orderList:" + orderList);
         return helper.no;
     }
+
+
 }

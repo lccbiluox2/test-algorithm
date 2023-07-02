@@ -21,14 +21,21 @@ public class CycleSingleLinkListTest {
         cycleSingleLinkList.show();
     }
 
+    /***
+     * todo: 九师兄  2023/7/2 11:58
+     *
+     * 【算法】约瑟夫环问题
+     * https://blog.csdn.net/qq_21383435/article/details/131498360
+     */
     @Test
     public void countTest() {
         CycleSingleLinkList cycleSingleLinkList = new CycleSingleLinkList();
-        cycleSingleLinkList.addNodes(10);
+        cycleSingleLinkList.addNodes(4);
 
         cycleSingleLinkList.show();
 
-        cycleSingleLinkList.count(0, 2, 10);
+        cycleSingleLinkList.count(2, 2, 4);
     }
+
 
 }
