@@ -20,7 +20,7 @@ public class Code88Test {
         int[] nums2 = {2,5,6};
         int n = 3;
         code88.merge(nums1,m,nums2,n);
-        ArraysUtils.printIntArray(nums1);;
+        ArraysUtils.printIntArray(nums1);
     }
 
     /***
