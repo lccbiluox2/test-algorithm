@@ -1,6 +1,5 @@
 package com.algorithm.graph.kruskal;
 
-import com.sun.xml.internal.bind.v2.TODO;
 
 import java.util.Arrays;
 

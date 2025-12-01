@@ -9,9 +9,28 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+                        <maven.compiler.source>21</maven.compiler.source>
+                        <maven.compiler.target>21</maven.compiler.target>
+                        <java.version>21</java.version>
+<!---->
+<!--        <maven.compiler.source>17</maven.compiler.source>-->
+<!--        <maven.compiler.target>17</maven.compiler.target>-->
+<!--        <java.version>17</java.version>-->
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+        <!-- 版本集中管理 -->
+        <slf4j.version>2.0.12</slf4j.version>
+        <logback.version>1.4.14</logback.version>
+        <lombok.version>1.18.34</lombok.version>
+        <janino.version>3.1.9</janino.version>
+        <!--        <janino.version>3.1.12</janino.version>-->
         <nacos.version>2.0.3</nacos.version>
         <slf4j-api.version>1.7.25</slf4j-api.version>
     </properties>
+
+
 
     <dependencies>
 
@@ -31,13 +50,13 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>1.18.36</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -60,20 +79,68 @@
     </dependencies>
 
     <build>
+        <!--        <sourceDirectory>src/main/scala</sourceDirectory>-->
+        <!--        <testSourceDirectory>src/test/scala</testSourceDirectory>-->
         <plugins>
 
+            <!-- Surefire for JVM tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <useFile>false</useFile>
+                    <disableXmlReport>true</disableXmlReport>
+                    <includes>
+                        <include>**/*Test.*</include>
+                        <include>**/*Suite.*</include>
+                    </includes>
+                    <systemPropertyVariables>
+                        <java.io.tmpdir>D:/spark-tmp</java.io.tmpdir>
+                        <spark.local.dir>D:/spark-tmp</spark.local.dir>
+                    </systemPropertyVariables>
+                    <!-- 👇 关键：为测试 JVM 添加 opens 参数 -->
+                    <argLine>
+                        --add-opens java.base/java.nio=ALL-UNNAMED
+                        --add-opens java.base/sun.nio.ch=ALL-UNNAMED
+                        --add-opens java.base/java.lang.invoke=ALL-UNNAMED
+                        --add-opens java.base/java.util=ALL-UNNAMED
+                        --add-opens java.base/java.lang=ALL-UNNAMED
+                        --add-opens java.base/sun.security.action=ALL-UNNAMED
+                        --add-opens java.base/java.net=ALL-UNNAMED
+                        --add-opens java.base/java.lang.reflect=ALL-UNNAMED
+                        --add-opens java.base/java.io=ALL-UNNAMED
+                        --add-opens java.base/java.util.concurrent=ALL-UNNAMED
+                        --add-opens java.base/java.util.concurrent.atomic=ALL-UNNAMED
+                        --add-opens java.base/sun.nio.cs=ALL-UNNAMED
+                        --add-opens java.base/java.util.concurrent.locks=ALL-UNNAMED
+                        --add-opens java.base/sun.util.calendar=ALL-UNNAMED
+                        --add-opens java.base/java.util.prefs=ALL-UNNAMED
+                        --add-opens java.base/java.util.regex=ALL-UNNAMED
+                        --add-opens java.base/java.lang.invoke=ALL-UNNAMED
+                        --add-opens java.base/java.lang.module=ALL-UNNAMED
+                        --add-opens java.base/java.text=ALL-UNNAMED
+                        --add-opens java.base/java.math=ALL-UNNAMED
+                        --add-opens java.base/java.nio.charset=ALL-UNNAMED
+                        --add-opens java.base/java.net=ALL-UNNAMED
+                        --add-opens java.base/java.lang=ALL-UNNAMED
+                        --add-opens java.base/java.lang.reflect=ALL-UNNAMED
+                    </argLine>
+                </configuration>
+            </plugin>
+
+            <!-- Explicit JDK 17 compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.13.0</version>
                 <configuration>
-                    <encoding>utf-8</encoding>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <release>${java.version}</release>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
